@@ -13,4 +13,4 @@ jobs:
             echo "ABC" > "a b c"
       - save_cache:
           key: foo
-          paths: a b c
+          paths: /tmp/a /tmp/b /tmp/c
