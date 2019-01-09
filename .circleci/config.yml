@@ -1,0 +1,16 @@
+version: 2
+jobs:
+  build:
+    working_directory: /tmp
+    docker:
+      - image: alpine:latest
+    steps:
+      - run:
+          command: |
+            echo "A" > a
+            echo "B" > b
+            echo "C" > c
+            echo "ABC" > "a b c"
+      - save_cache:
+          key: foo
+          paths: a b c
